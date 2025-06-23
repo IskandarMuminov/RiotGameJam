@@ -18,6 +18,7 @@ public class Lightbeam : MonoBehaviour
         if (other.gameObject.CompareTag("Player"))
         {
             isCaught = true;
+            other.gameObject.GetComponentInParent<ResourceManager>().IncreaseSun();
         }
     }
 }
