@@ -1,3 +1,4 @@
+using KinematicCharacterController;
 using UnityEngine;
 
 public class GrapplingGun : MonoBehaviour {
@@ -21,6 +22,7 @@ public class GrapplingGun : MonoBehaviour {
     public float spring;
     public float damper;
     public float massScale;
+    public KinematicCharacterMotor motor;
 
     void Start()
     {
@@ -117,6 +119,18 @@ public class GrapplingGun : MonoBehaviour {
         //aimAssistSound.Stop();
         grabbableObject=false;
     }
+    void FixedUpdate()
+{
+    if (isGrappling && !grabbableObject)
+    {
+        Vector3 toGrapple = grapplePoint - motor.TransientPosition;
+        float dist = toGrapple.magnitude;
+        Vector3 dir = toGrapple.normalized;
+
+        float force = (dist * spring) - Vector3.Dot(motor.BaseVelocity, dir) * damper;
+        motor.BaseVelocity += dir * force * Time.fixedDeltaTime;
+    }
+}
 
     private Vector3 currentGrapplePosition;
     
@@ -124,8 +138,10 @@ public class GrapplingGun : MonoBehaviour {
         //If not grappling, don't draw rope
         if (!joint) return;
     }
+    
 
-    public bool IsGrappling() {
+    public bool IsGrappling()
+    {
         return joint != null;
     }
 

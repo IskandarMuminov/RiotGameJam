@@ -6004,18 +6004,28 @@ PrefabInstance:
     - target: {fileID: 4581410600763508053, guid: d64f63d457bb32348983af6ffcf6a1c4,
         type: 3}
       propertyPath: RigidbodyInteractionType
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4581410600763508053, guid: d64f63d457bb32348983af6ffcf6a1c4,
         type: 3}
       propertyPath: MaxStableDistanceFromLedge
       value: 0.22
       objectReference: {fileID: 0}
+    - target: {fileID: 4581410600763508053, guid: d64f63d457bb32348983af6ffcf6a1c4,
+        type: 3}
+      propertyPath: InteractiveRigidbodyHandling
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4583265630767020245, guid: d64f63d457bb32348983af6ffcf6a1c4,
         type: 3}
       propertyPath: Drag
       value: 0.1
       objectReference: {fileID: 0}
+    - target: {fileID: 4583265630767020245, guid: d64f63d457bb32348983af6ffcf6a1c4,
+        type: 3}
+      propertyPath: Motor
+      value: 
+      objectReference: {fileID: 1863042782}
     - target: {fileID: 4583265630767020245, guid: d64f63d457bb32348983af6ffcf6a1c4,
         type: 3}
       propertyPath: JumpUpSpeed
@@ -6064,7 +6074,7 @@ PrefabInstance:
     - target: {fileID: 7761476483720612763, guid: d64f63d457bb32348983af6ffcf6a1c4,
         type: 3}
       propertyPath: m_IsKinematic
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8182549924998452291, guid: d64f63d457bb32348983af6ffcf6a1c4,
         type: 3}
@@ -10825,9 +10835,10 @@ MonoBehaviour:
   aimAssistSize: 1
   debugAssist: {fileID: 832861610}
   GrapplingKey: 323
-  spring: 205.8
+  spring: 20
   damper: 7
   massScale: 5
+  motor: {fileID: 1863042782}
 --- !u!1001 &1765040842
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11175,6 +11186,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1852949738}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1863042782 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4581410600763508053, guid: d64f63d457bb32348983af6ffcf6a1c4,
+    type: 3}
+  m_PrefabInstance: {fileID: 993111613}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d1bc5515e3ab954e80599c538834774, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1888427332
 PrefabInstance:
   m_ObjectHideFlags: 0
