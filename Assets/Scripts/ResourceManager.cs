@@ -44,18 +44,18 @@ public class ResourceManager : MonoBehaviour
     private Stats sun_stats = new(3);
     private Stats water_stats = new(3);
     private Stats mineral_stats = new(3);
+    // Trigger events to update UI, Abilities and Player Mesh
     public static UnityAction<string, int> StatUpdated;
     public static UnityAction<Player_State> StateChanged;
 
-    // Trigger events to update UI, Abilities and Player Mesh
-
+    // Track Player State
     public Player_State player_State = Player_State.Seedling;
 
     void Start()
     {
-        IncreaseSun();
-        IncreaseSun();
-        IncreaseSun();
+        // IncreaseSun();
+        // IncreaseWater();
+        // IncreaseMineral();
     }
 
     public void IncreaseSun()
