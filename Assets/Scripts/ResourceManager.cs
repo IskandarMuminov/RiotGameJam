@@ -82,9 +82,13 @@ public class ResourceManager : MonoBehaviour
         StatUpdated?.Invoke(type, stats.current_amount);
         if (stats.IsReqReached())
         {
+            
             // move to sapling stage
-            player_State = next_state;
-            StateChanged?.Invoke(player_State);
+            if (player_State != next_state) {
+                player_State = next_state;
+                StateChanged?.Invoke(player_State);
+            }
+            
         }
         return stats; 
     }
