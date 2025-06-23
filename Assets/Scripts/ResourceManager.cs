@@ -88,7 +88,6 @@ public class ResourceManager : MonoBehaviour
                 player_State = next_state;
                 StateChanged?.Invoke(player_State);
             }
-            
         }
         return stats; 
     }
