@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using KinematicCharacterController;
@@ -16,6 +16,8 @@ namespace KinematicCharacterController.Examples
         private const string MouseScrollInput = "Mouse ScrollWheel";
         private const string HorizontalInput = "Horizontal";
         private const string VerticalInput = "Vertical";
+        public Animator animator;
+        
 
         private void Start()
         {
@@ -36,6 +38,15 @@ namespace KinematicCharacterController.Examples
                 Cursor.lockState = CursorLockMode.Locked;
             }
 
+            if (Input.GetAxisRaw(HorizontalInput) != 0 || Input.GetAxisRaw(VerticalInput) != 0)
+            {
+
+                animator.SetBool("Walking", true);
+            }
+            else
+            {
+                animator.SetBool("Walking", false);
+            }
             HandleCharacterInput();
         }
 
