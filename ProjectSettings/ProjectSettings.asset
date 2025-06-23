@@ -807,7 +807,7 @@ PlayerSettings:
     PS5: DOTWEEN
     QNX: DOTWEEN
     Stadia: DOTWEEN
-    Standalone: DOTWEEN
+    Standalone: DOTWEEN;USE_ARCWEAVE
     VisionOS: DOTWEEN
     WebGL: DOTWEEN
     Windows Store Apps: DOTWEEN
