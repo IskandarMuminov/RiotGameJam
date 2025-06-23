@@ -182,6 +182,7 @@ namespace KinematicCharacterController
         [SerializeField]
         [Tooltip("Height of the Character Capsule")]
         private float CapsuleYOffset = 1f;
+        
         /// <summary>
         /// Physics material of the character's capsule
         /// </summary>
@@ -1343,6 +1344,9 @@ namespace KinematicCharacterController
             _mustUnground = true;
             _mustUngroundTimeCounter = time;
         }
+        public float GetYoff() {
+            return CapsuleYOffset;
+        } 
 
         public bool MustUnground()
         {
