@@ -6,28 +6,38 @@ public class LightbeamSpawner : MonoBehaviour
 {
     [SerializeField] private GameObject[] lightbeams;
     [SerializeField] private float spawnRate;
+    [SerializeField] private bool isInCave;
 
-    void Start()
-    {
-        
-    }
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Player"))
         {
+            isInCave = true;
             //function to switch the camera view
             StartCoroutine(SpawnLightbeams());
         }
     }
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.CompareTag("Player"))
+        {
+            isInCave = false;
+        }
+    }
 
     public IEnumerator SpawnLightbeams() {
-
-        for (int i = 0; i < lightbeams.Length; i++)
+        while (isInCave)
         {
-            lightbeams[i].SetActive(true);
-            yield return new WaitForSecondsRealtime(Random.Range(0, spawnRate));
-            lightbeams[i].SetActive(false);
+            for (int i = 0; i < lightbeams.Length; i++)
+            {
+                i = Random.Range(0, lightbeams.Length);
+
+                lightbeams[i].SetActive(true);
+                yield return new WaitForSecondsRealtime(Random.Range(spawnRate, spawnRate + 1));
+                lightbeams[i].SetActive(false);
+            }
+
         }
 
     }
