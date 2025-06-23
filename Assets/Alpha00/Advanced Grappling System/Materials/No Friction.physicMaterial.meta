@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 6c4a409b6f5425c48847b27f81c20416
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 13400000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 199785
+  packageName: Advanced Grappling System
+  packageVersion: 1.2
+  assetPath: Assets/Alpha00/Advanced Grappling System/Materials/No Friction.physicMaterial
+  uploadId: 547672

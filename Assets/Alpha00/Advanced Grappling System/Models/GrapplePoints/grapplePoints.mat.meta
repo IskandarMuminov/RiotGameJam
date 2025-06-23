@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 1e784b389e491294aaec98127e48277e
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 199785
+  packageName: Advanced Grappling System
+  packageVersion: 1.2
+  assetPath: Assets/Alpha00/Advanced Grappling System/Models/GrapplePoints/grapplePoints.mat
+  uploadId: 547672
