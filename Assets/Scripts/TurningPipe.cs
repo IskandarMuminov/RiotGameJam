@@ -11,6 +11,10 @@ public class TurningPipe : MonoBehaviour
     public GameObject gm3;
 
     private GameObject currentGameObject ;
+
+    public bool RightPipe;
+
+    public GameObject CorrectPipe;
     // Start is called before the first frame update
     void Start()
     {
@@ -34,16 +38,40 @@ public class TurningPipe : MonoBehaviour
             {
                 gm3.SetActive(false);
                 gm1.SetActive(true);
+                if (gm1 == CorrectPipe)
+                {
+                    RightPipe = true;
+                }
+                else
+                {
+                    RightPipe = false;
+                }
             }
             if (Counter == 1)
             {
                 gm1.SetActive(false);
                 gm2.SetActive(true);
+                if (gm2 == CorrectPipe)
+                {
+                    RightPipe = true;
+                }
+                else
+                {
+                    RightPipe = false;
+                }
             }
             if (Counter == 2)
             {
                 gm2.SetActive(false);
                 gm3.SetActive(true);
+                if (gm3 == CorrectPipe)
+                {
+                    RightPipe = true;
+                }
+                else
+                {
+                    RightPipe = false;
+                }
             }
             
             
