@@ -3,21 +3,32 @@ using System.Collections.Generic;
 using UnityEngine;
 using KinematicCharacterController;
 using KinematicCharacterController.Examples;
-
+    public enum status
+    {
+        Small,
+        Medium,
+        Large,
+        ExtraLarge
+    }
 namespace KinematicCharacterController.Examples
 {
+
     public class ExamplePlayer : MonoBehaviour
     {
         public ExampleCharacterController Character;
         public ExampleCharacterCamera CharacterCamera;
-
+        public KinematicCharacterMotor CM;
         private const string MouseXInput = "Mouse X";
         private const string MouseYInput = "Mouse Y";
         private const string MouseScrollInput = "Mouse ScrollWheel";
         private const string HorizontalInput = "Horizontal";
         private const string VerticalInput = "Vertical";
         public Animator animator;
-        
+        [SerializeField] private status CharacterStatus;
+        private bool canJump = false;
+        private bool canGrapple = false;
+        public GameObject grappleGO;
+        public GameObject characterModel;
 
         private void Start()
         {
@@ -29,8 +40,42 @@ namespace KinematicCharacterController.Examples
             // Ignore the character's collider(s) for camera obstruction checks
             CharacterCamera.IgnoredColliders.Clear();
             CharacterCamera.IgnoredColliders.AddRange(Character.GetComponentsInChildren<Collider>());
+            ApplyState(CharacterStatus);
+            
+            CM.SetCapsuleDimensions(CM.Capsule.radius, CM.Capsule.height ,CM.GetYoff());
+            
+            
+        
         }
-
+        public void ApplyState(status status)
+        {
+            CharacterStatus = status;
+            switch (status)
+            {
+                case status.Small:
+                    canJump = false;
+                    break;
+                case status.Medium:
+                    canJump = true;
+                    characterModel.transform.localScale = characterModel.transform.localScale * 3f;
+                    CM.SetCapsuleDimensions(CM.Capsule.radius*3, CM.Capsule.height*3 ,CM.GetYoff()*3f);
+                    break;
+                case status.Large:
+                    canJump = true;
+                    canGrapple = true;
+                    CM.SetCapsuleDimensions(CM.Capsule.radius*3, CM.Capsule.height*3 ,CM.GetYoff()*5f);
+                    characterModel.transform.localScale = characterModel.transform.localScale * 5f;
+                    activeGrapple();
+                    break;
+                default:
+                    break;
+            }
+        }
+        
+        void activeGrapple()
+        {
+            grappleGO.SetActive(true);
+        }
         private void Update()
         {
             if (Input.GetMouseButtonDown(0))
@@ -103,7 +148,7 @@ namespace KinematicCharacterController.Examples
             characterInputs.MoveAxisForward = Input.GetAxisRaw(VerticalInput);
             characterInputs.MoveAxisRight = Input.GetAxisRaw(HorizontalInput);
             characterInputs.CameraRotation = CharacterCamera.Transform.rotation;
-            characterInputs.JumpDown = Input.GetKeyDown(KeyCode.Space);
+            if(canJump) characterInputs.JumpDown = Input.GetKeyDown(KeyCode.Space);
             characterInputs.CrouchDown = Input.GetKeyDown(KeyCode.C);
             characterInputs.CrouchUp = Input.GetKeyUp(KeyCode.C);
 
