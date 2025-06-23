@@ -630,6 +630,8 @@ MonoBehaviour:
   CM: {fileID: 4581410600763508053}
   animator: {fileID: 5717431995003880414}
   CharacterStatus: 0
+  canJump: 1
+  canGrapple: 1
   grappleGO: {fileID: 2442970912039158500}
   characterModel: {fileID: 5717431994996600862}
 --- !u!114 &5386504530648345394

@@ -25,8 +25,8 @@ namespace KinematicCharacterController.Examples
         private const string VerticalInput = "Vertical";
         public Animator animator;
         [SerializeField] private Player_State CharacterStatus;
-        private bool canJump = false;
-        private bool canGrapple = false;
+        [SerializeField] private bool canJump = false;
+        [SerializeField] private bool canGrapple = false;
         public GameObject grappleGO;
         public GameObject characterModel;
 
@@ -46,9 +46,6 @@ namespace KinematicCharacterController.Examples
             CharacterCamera.IgnoredColliders.Clear();
             CharacterCamera.IgnoredColliders.AddRange(Character.GetComponentsInChildren<Collider>());
             ApplyState(CharacterStatus);
-
-            CM.SetCapsuleDimensions(CM.Capsule.radius, CM.Capsule.height, CM.GetYoff());
-
 
 
         }
@@ -103,6 +100,10 @@ namespace KinematicCharacterController.Examples
             else
             {
                 animator.SetBool("Walking", false);
+            }
+            if (canJump && Input.GetKeyDown(KeyCode.Space))
+            {
+                animator.SetTrigger("Jump");
             }
             HandleCharacterInput();
         }
