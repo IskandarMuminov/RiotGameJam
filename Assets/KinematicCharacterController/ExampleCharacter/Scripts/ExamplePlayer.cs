@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using KinematicCharacterController;
 using KinematicCharacterController.Examples;
-    public enum status
-    {
-        Small,
-        Medium,
-        Large,
-        ExtraLarge
-    }
+    // public enum status
+    // {
+    //     Small,
+    //     Medium,
+    //     Large,
+    //     ExtraLarge
+    // }
 namespace KinematicCharacterController.Examples
 {
 
@@ -24,11 +24,16 @@ namespace KinematicCharacterController.Examples
         private const string HorizontalInput = "Horizontal";
         private const string VerticalInput = "Vertical";
         public Animator animator;
-        [SerializeField] private status CharacterStatus;
+        [SerializeField] private Player_State CharacterStatus;
         private bool canJump = false;
         private bool canGrapple = false;
         public GameObject grappleGO;
         public GameObject characterModel;
+
+        void OnEnable()
+        {
+            ResourceManager.StateChanged += ApplyState; 
+        }
 
         private void Start()
         {
@@ -41,31 +46,34 @@ namespace KinematicCharacterController.Examples
             CharacterCamera.IgnoredColliders.Clear();
             CharacterCamera.IgnoredColliders.AddRange(Character.GetComponentsInChildren<Collider>());
             ApplyState(CharacterStatus);
-            
-            CM.SetCapsuleDimensions(CM.Capsule.radius, CM.Capsule.height ,CM.GetYoff());
-            
-            
-        
+
+            CM.SetCapsuleDimensions(CM.Capsule.radius, CM.Capsule.height, CM.GetYoff());
+
+
+
         }
-        public void ApplyState(status status)
+        public void ApplyState(Player_State status)
         {
             CharacterStatus = status;
             switch (status)
             {
-                case status.Small:
+                case Player_State.Seedling:
                     canJump = false;
                     break;
-                case status.Medium:
+                case Player_State.Sapling:
                     canJump = true;
                     characterModel.transform.localScale = characterModel.transform.localScale * 3f;
                     CM.SetCapsuleDimensions(CM.Capsule.radius*3, CM.Capsule.height*3 ,CM.GetYoff()*3f);
                     break;
-                case status.Large:
+                case Player_State.Young:
                     canJump = true;
                     canGrapple = true;
                     CM.SetCapsuleDimensions(CM.Capsule.radius*5, CM.Capsule.height*5 ,CM.GetYoff()*5f);
                     characterModel.transform.localScale = characterModel.transform.localScale * 5f;
                     activeGrapple();
+                    break;
+                case Player_State.Mature:
+                // final stage
                     break;
                 default:
                     break;
