@@ -999,6 +999,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2826429115713200624}
     m_Modifications:
+    - target: {fileID: 835558744767666481, guid: a4af41c0700c35243b281bba20072633,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 7dddd784b363012478f6da0f164109cf, type: 2}
     - target: {fileID: 835558744767666486, guid: a4af41c0700c35243b281bba20072633,
         type: 3}
       propertyPath: Camera
@@ -1008,6 +1013,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: DebugAssist
+      objectReference: {fileID: 0}
+    - target: {fileID: 835558744799860692, guid: a4af41c0700c35243b281bba20072633,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 835558744799860693, guid: a4af41c0700c35243b281bba20072633,
         type: 3}
