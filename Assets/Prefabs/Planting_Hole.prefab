@@ -30,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 192007335479311023}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 0.12648104, z: -0, w: 0.99196905}
-  m_LocalPosition: {x: 0.14, y: 0.19, z: 0.23}
+  m_LocalPosition: {x: 0.13000178, y: 0.19, z: 0.23}
   m_LocalScale: {x: 2, y: 0.4, z: 3}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -178,7 +178,7 @@ Transform:
   m_GameObject: {fileID: 424523110567589857}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 0.060053036, z: -0, w: 0.99819523}
-  m_LocalPosition: {x: 0.3699994, y: 0.21700159, z: -1.43}
+  m_LocalPosition: {x: 0.3600011, y: 0.21700159, z: -1.43}
   m_LocalScale: {x: 1.5, y: 0.5, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -325,8 +325,8 @@ Transform:
   m_GameObject: {fileID: 672186732467131049}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.408, z: -0.94}
-  m_LocalScale: {x: 1, y: 0.5, z: 1}
+  m_LocalPosition: {x: -0.93, y: -0.06, z: -0.48}
+  m_LocalScale: {x: 4, y: 0.5, z: 4}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 862879543106833922}
@@ -444,7 +444,7 @@ Transform:
   m_GameObject: {fileID: 960906273426662007}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.58, y: 0.19, z: 0.23}
+  m_LocalPosition: {x: -1.5899982, y: 0.19, z: 0.23}
   m_LocalScale: {x: 2.3, y: 0.4, z: 2.9}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1105,7 +1105,7 @@ Transform:
   m_GameObject: {fileID: 7080281446314234371}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0.16897023, z: -0, w: 0.98562115}
-  m_LocalPosition: {x: -1.29, y: 0.18900159, z: -1.67}
+  m_LocalPosition: {x: -1.2999983, y: 0.18900159, z: -1.67}
   m_LocalScale: {x: 3, y: 0.5, z: 2.3}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1234,7 +1234,7 @@ PrefabInstance:
     - target: {fileID: 1662159813126346550, guid: 30d3ac278f4a8834ca661af549acba98,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.2
+      value: -2.21
       objectReference: {fileID: 0}
     - target: {fileID: 1662159813126346550, guid: 30d3ac278f4a8834ca661af549acba98,
         type: 3}

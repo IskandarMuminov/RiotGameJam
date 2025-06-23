@@ -9,14 +9,16 @@ public class UIManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI sun_amount_text;
     [SerializeField] private TextMeshProUGUI water_amount_text;
     [SerializeField] private TextMeshProUGUI mineral_amount_text;
+    [SerializeField] private GameObject winning_panel;
 
     void OnEnable()
     {
-        ResourceManager.StatUpdated += UpdateUI;
+        ResourceManager.StatUpdated += UpdateUIStats;
+        PlantingHole.plantingCompleted += OnPlantingCompleted;
     }
 
 
-    private void UpdateUI(string type, int amount)
+    private void UpdateUIStats(string type, int amount)
     {
         TextMeshProUGUI text;
         switch (type)
@@ -35,6 +37,11 @@ public class UIManager : MonoBehaviour
                 return;
         }
         text.SetText(amount.ToString());
-        
+
+    }
+
+    private void OnPlantingCompleted()
+    {
+        winning_panel.SetActive(true);
     }
 }
