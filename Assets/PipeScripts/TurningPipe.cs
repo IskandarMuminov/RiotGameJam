@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -13,8 +14,13 @@ public class TurningPipe : MonoBehaviour
     private GameObject currentGameObject ;
 
     public bool RightPipe;
-
+    public bool Activated;
     public GameObject CorrectPipe;
+
+    public GameObject ActivateNextPipe;
+
+    public GameObject[] Water;
+
     // Start is called before the first frame update
     public void TurnPipe()
     {
@@ -35,10 +41,14 @@ public class TurningPipe : MonoBehaviour
                 if (gm1 == CorrectPipe)
                 {
                     RightPipe = true;
+                    ActivateNextPipe.GetComponent<TurningPipe>().Activated = true; 
+                    ActivateNextPipe.GetComponent<TurningPipe>().ActiviatedPipe();
+
                 }
                 else
                 {
                     RightPipe = false;
+                    ActivateNextPipe.GetComponent<TurningPipe>().Activated = false; 
                 }
             }
                 
@@ -52,10 +62,13 @@ public class TurningPipe : MonoBehaviour
                 if (gm2 == CorrectPipe)
                 {
                     RightPipe = true;
+                    ActivateNextPipe.GetComponent<TurningPipe>().Activated = true; 
+                    ActivateNextPipe.GetComponent<TurningPipe>().ActiviatedPipe();
                 }
                 else
                 {
                     RightPipe = false;
+                    ActivateNextPipe.GetComponent<TurningPipe>().Activated = false; 
                 }
             }
         }
@@ -68,14 +81,28 @@ public class TurningPipe : MonoBehaviour
                 if (gm3 == CorrectPipe)
                 {
                     RightPipe = true;
+                    ActivateNextPipe.GetComponent<TurningPipe>().Activated = true; 
+                    ActivateNextPipe.GetComponent<TurningPipe>().ActiviatedPipe();
                 }
                 else
                 {
                     RightPipe = false;
+                    ActivateNextPipe.GetComponent<TurningPipe>().Activated = false; 
                 }
             }
         }
+
+        
     }
+
+    private void ActiviatedPipe()
+    {
+        foreach (GameObject water in Water)
+        {
+            water.SetActive(true);
+        }
+    }
+    
 
     // Update is called once per frame
     /*

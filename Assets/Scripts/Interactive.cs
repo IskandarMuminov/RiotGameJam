@@ -22,6 +22,7 @@ public class Interactive : MonoBehaviour
     void Interact()
     {
         m_OnInteract.Invoke(); 
+        
     }
     
 }

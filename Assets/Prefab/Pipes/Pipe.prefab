@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 296727628939739769}
   - component: {fileID: 1767525254655440697}
   - component: {fileID: 6906841943591201672}
+  - component: {fileID: -2593693530265074101}
   m_Layer: 0
   m_Name: Pipe
   m_TagString: Untagged
@@ -133,6 +134,27 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!65 &-2593693530265074101
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3440958062538766655}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 0
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &2411379099109712782
 PrefabInstance:
   m_ObjectHideFlags: 0
