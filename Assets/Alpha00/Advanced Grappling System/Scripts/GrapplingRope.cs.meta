@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: b83d406e5fdd3184fb12355c1cf948ec
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 199785
+  packageName: Advanced Grappling System
+  packageVersion: 1.2
+  assetPath: Assets/Alpha00/Advanced Grappling System/Scripts/GrapplingRope.cs
+  uploadId: 547672

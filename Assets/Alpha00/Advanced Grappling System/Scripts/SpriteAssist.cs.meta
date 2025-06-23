@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: cd929e6f53a0e2a46bbe037dd753718b
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 199785
+  packageName: Advanced Grappling System
+  packageVersion: 1.2
+  assetPath: Assets/Alpha00/Advanced Grappling System/Scripts/SpriteAssist.cs
+  uploadId: 547672

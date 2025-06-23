@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 823ce1ab00d828944bb25b87c90e30e1
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 199785
+  packageName: Advanced Grappling System
+  packageVersion: 1.2
+  assetPath: Assets/Alpha00/Advanced Grappling System/City Demo Scene/Prefabs/GrapplePoint.prefab
+  uploadId: 547672

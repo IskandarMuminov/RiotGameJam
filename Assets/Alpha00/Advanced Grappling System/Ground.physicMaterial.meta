@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: cf7eb5563b1e14e4bade97cc4f142e76
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 13400000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 199785
+  packageName: Advanced Grappling System
+  packageVersion: 1.2
+  assetPath: Assets/Alpha00/Advanced Grappling System/Ground.physicMaterial
+  uploadId: 547672
