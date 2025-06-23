@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4093677256858217085}
+  - component: {fileID: -640183635930593001}
   m_Layer: 0
   m_Name: TriplePipes
   m_TagString: Untagged
@@ -32,6 +33,19 @@ Transform:
   - {fileID: 6308362978268188913}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &-640183635930593001
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1821504044837561903}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc916c76e027fda4fb4fc1ec4203e830, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  RotatedPipe: {fileID: 6308362978267827409}
 --- !u!1001 &6308362978267794033
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -99,12 +113,18 @@ PrefabInstance:
     - target: {fileID: 2300000, guid: 8b3fa6bef3e11f64a9443d90b6e641a9, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 1140a97b855c32f419648db12db9d934, type: 2}
+      objectReference: {fileID: 2100000, guid: b17d5188d9b552f4985beae5011350b1, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8b3fa6bef3e11f64a9443d90b6e641a9, type: 3}
+--- !u!1 &6308362978267827409 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 100000, guid: 8b3fa6bef3e11f64a9443d90b6e641a9,
+    type: 3}
+  m_PrefabInstance: {fileID: 6308362978267794033}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &6308362978268188913 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 8b3fa6bef3e11f64a9443d90b6e641a9,

@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8837096583673190575}
   - component: {fileID: 296727628939739769}
   - component: {fileID: 1767525254655440697}
+  - component: {fileID: 6906841943591201672}
   m_Layer: 0
   m_Name: Pipe
   m_TagString: Untagged
@@ -96,7 +97,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 3440958062538766655}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0b812ab543b9bfe43a66942d67aa1d27, type: 3}
+  m_Script: {fileID: 11500000, guid: 2bcb8a5528d1dab44993afd714fb72f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Counter: 0
@@ -105,6 +106,33 @@ MonoBehaviour:
   gm3: {fileID: 2411379099109811502}
   RightPipe: 0
   CorrectPipe: {fileID: 0}
+--- !u!114 &6906841943591201672
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3440958062538766655}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9cd31651ef623e46a8391dd89183cb7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OnInteract:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1767525254655440697}
+        m_TargetAssemblyTypeName: TurningPipe, Assembly-CSharp
+        m_MethodName: TurnPipe
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1001 &2411379099109712782
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -164,7 +192,7 @@ PrefabInstance:
     - target: {fileID: 2300000, guid: 1c6b777194c8aee42b8889484b9da8fe, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 1140a97b855c32f419648db12db9d934, type: 2}
+      objectReference: {fileID: 2100000, guid: b17d5188d9b552f4985beae5011350b1, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -237,7 +265,7 @@ PrefabInstance:
     - target: {fileID: 2300000, guid: 6bcc576e2a471464783dfb5ff2c839be, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 1140a97b855c32f419648db12db9d934, type: 2}
+      objectReference: {fileID: 2100000, guid: b17d5188d9b552f4985beae5011350b1, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -314,7 +342,7 @@ PrefabInstance:
     - target: {fileID: 2300000, guid: 1c6b777194c8aee42b8889484b9da8fe, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 1140a97b855c32f419648db12db9d934, type: 2}
+      objectReference: {fileID: 2100000, guid: b17d5188d9b552f4985beae5011350b1, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
