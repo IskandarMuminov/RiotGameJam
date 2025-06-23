@@ -37,6 +37,10 @@ namespace KinematicCharacterController.Examples
             {
                 Cursor.lockState = CursorLockMode.Locked;
             }
+            if (Input.GetMouseButtonDown(0))
+            {
+                animator.SetTrigger("Attack");
+            }
 
             if (Input.GetAxisRaw(HorizontalInput) != 0 || Input.GetAxisRaw(VerticalInput) != 0)
             {
