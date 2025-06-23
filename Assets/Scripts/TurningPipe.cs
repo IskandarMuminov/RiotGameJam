@@ -38,39 +38,49 @@ public class TurningPipe : MonoBehaviour
             {
                 gm3.SetActive(false);
                 gm1.SetActive(true);
-                if (gm1 == CorrectPipe)
+                if (CorrectPipe)
                 {
-                    RightPipe = true;
+                    if (gm1 == CorrectPipe)
+                    {
+                        RightPipe = true;
+                    }
+                    else
+                    {
+                        RightPipe = false;
+                    }
                 }
-                else
-                {
-                    RightPipe = false;
-                }
+                
             }
             if (Counter == 1)
             {
                 gm1.SetActive(false);
                 gm2.SetActive(true);
-                if (gm2 == CorrectPipe)
+                if (CorrectPipe)
                 {
-                    RightPipe = true;
-                }
-                else
-                {
-                    RightPipe = false;
+                    if (gm2 == CorrectPipe)
+                    {
+                        RightPipe = true;
+                    }
+                    else
+                    {
+                        RightPipe = false;
+                    }
                 }
             }
             if (Counter == 2)
             {
                 gm2.SetActive(false);
                 gm3.SetActive(true);
-                if (gm3 == CorrectPipe)
+                if (CorrectPipe)
                 {
-                    RightPipe = true;
-                }
-                else
-                {
-                    RightPipe = false;
+                    if (gm3 == CorrectPipe)
+                    {
+                        RightPipe = true;
+                    }
+                    else
+                    {
+                        RightPipe = false;
+                    }
                 }
             }
             
