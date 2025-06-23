@@ -63,7 +63,7 @@ namespace KinematicCharacterController.Examples
                 case status.Large:
                     canJump = true;
                     canGrapple = true;
-                    CM.SetCapsuleDimensions(CM.Capsule.radius*3, CM.Capsule.height*3 ,CM.GetYoff()*5f);
+                    CM.SetCapsuleDimensions(CM.Capsule.radius*5, CM.Capsule.height*5 ,CM.GetYoff()*5f);
                     characterModel.transform.localScale = characterModel.transform.localScale * 5f;
                     activeGrapple();
                     break;
