@@ -18,6 +18,10 @@ namespace KinematicCharacterController.Examples
         public ExampleCharacterController Character;
         public ExampleCharacterCamera CharacterCamera;
         public KinematicCharacterMotor CM;
+        [SerializeField] private float seedlingSize = 1f;
+        [SerializeField] private float saplingSize = 3f;
+        [SerializeField] private float youngSize = 5f;
+        [SerializeField] private float matureSize = 10f;
         private const string MouseXInput = "Mouse X";
         private const string MouseYInput = "Mouse Y";
         private const string MouseScrollInput = "Mouse ScrollWheel";
@@ -25,10 +29,12 @@ namespace KinematicCharacterController.Examples
         private const string VerticalInput = "Vertical";
         public Animator animator;
         [SerializeField] private Player_State CharacterStatus;
-        private bool canJump = false;
-        private bool canGrapple = false;
+        [SerializeField] private bool canJump = false;
+        [SerializeField] private bool canGrapple = false;
         public GameObject grappleGO;
         public GameObject characterModel;
+        private float radius, heights, offset;
+        private Vector3 initialSizeModel;
 
         void OnEnable()
         {
@@ -45,12 +51,17 @@ namespace KinematicCharacterController.Examples
             // Ignore the character's collider(s) for camera obstruction checks
             CharacterCamera.IgnoredColliders.Clear();
             CharacterCamera.IgnoredColliders.AddRange(Character.GetComponentsInChildren<Collider>());
+
             ApplyState(CharacterStatus);
 
-            CM.SetCapsuleDimensions(CM.Capsule.radius, CM.Capsule.height, CM.GetYoff());
 
-
-
+        }
+        void Awake()
+        {
+            radius = CM.Capsule.radius;
+            heights = CM.Capsule.height;
+            offset = CM.GetYoff();
+            initialSizeModel = characterModel.transform.localScale;
         }
         public void ApplyState(Player_State status)
         {
@@ -62,22 +73,25 @@ namespace KinematicCharacterController.Examples
                     break;
                 case Player_State.Sapling:
                     canJump = true;
-                    characterModel.transform.localScale = characterModel.transform.localScale * 3f;
-                    CM.SetCapsuleDimensions(CM.Capsule.radius*3, CM.Capsule.height*3 ,CM.GetYoff()*3f);
+                    multiplySize(saplingSize);
                     break;
                 case Player_State.Young:
                     canJump = true;
                     canGrapple = true;
-                    CM.SetCapsuleDimensions(CM.Capsule.radius*5, CM.Capsule.height*5 ,CM.GetYoff()*5f);
-                    characterModel.transform.localScale = characterModel.transform.localScale * 5f;
+                    multiplySize(youngSize);
                     activeGrapple();
                     break;
                 case Player_State.Mature:
-                // final stage
+                    // final stage
                     break;
                 default:
                     break;
             }
+        }
+        private void multiplySize(float multiflier)
+        {
+            CM.SetCapsuleDimensions(radius * multiflier, heights * multiflier, offset * multiflier);
+            characterModel.transform.localScale = initialSizeModel * multiflier;
         }
         
         void activeGrapple()
@@ -103,6 +117,10 @@ namespace KinematicCharacterController.Examples
             else
             {
                 animator.SetBool("Walking", false);
+            }
+            if (canJump && Input.GetKeyDown(KeyCode.Space))
+            {
+                animator.SetTrigger("Jump");
             }
             HandleCharacterInput();
         }

@@ -40,6 +40,7 @@ public struct Stats
 public class ResourceManager : MonoBehaviour
 {
     // Player Resource Manager
+    public static ResourceManager Instance;
     // Track amount of sunlight, water and minerals collected 
     private Stats sun_stats = new(3);
     private Stats water_stats = new(3);
@@ -53,6 +54,7 @@ public class ResourceManager : MonoBehaviour
 
     void Start()
     {
+        Instance = this;
         // IncreaseSun();
         // IncreaseWater();
         // IncreaseMineral();
@@ -74,6 +76,10 @@ public class ResourceManager : MonoBehaviour
         IncreaseStats(mineral_stats, "Mineral", Player_State.Mature); 
     }
 
+    public int GetCurrentSun()
+    {
+        return sun_stats.current_amount;
+    }
     
     private Stats IncreaseStats(Stats stats, string type, Player_State next_state)
     {
