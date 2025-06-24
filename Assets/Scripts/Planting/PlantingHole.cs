@@ -39,6 +39,7 @@ public class PlantingHole : MonoBehaviour
             }
             // if all true, plant is planted 
             isPlanted = true;
+            Time.timeScale = 0; 
             plantingCompleted?.Invoke();
 
         }
