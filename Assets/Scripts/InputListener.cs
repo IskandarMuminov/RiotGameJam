@@ -6,6 +6,8 @@ using UnityEngine.Events;
 public class InputListener : MonoBehaviour
 {
     UnityEvent m_sunLightPopup = new UnityEvent();
+    private bool rounting = false;
+    bool rt = false;
     void Start()
     {
         m_sunLightPopup.AddListener(OnJumpPressed);
@@ -27,11 +29,11 @@ public class InputListener : MonoBehaviour
             //Register the next area's popup
             StartCoroutine(WaterPopup());
         }
-        else if (currentSun == 3 && currentWater == 1 && currentMineral < 3)
+        else if (currentSun == 3 && currentWater == 1 && currentMineral < 3 && !rounting)
         {
             StartCoroutine(MineralPopup());
         }
-        else if (currentSun == 3 && currentWater == 1 && currentMineral == 3)
+        else if (currentSun == 3 && currentWater == 1 && currentMineral == 3 && !rt)
         {
             StartCoroutine(PlantPopup());
         }
@@ -52,14 +54,18 @@ public class InputListener : MonoBehaviour
     
     IEnumerator MineralPopup()
     {
+        rounting = true;
         yield return new WaitForSecondsRealtime(15f);
         DialogueManager.Instance.StartConversation("Mineral Popup", this.transform);
+        rounting = false;
     }
     
     IEnumerator PlantPopup()
     {
+        rt = true;
         yield return new WaitForSecondsRealtime(15f);
         DialogueManager.Instance.StartConversation("Planting", this.transform);
+        rt = false;
     }
     
 }
