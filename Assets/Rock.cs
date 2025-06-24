@@ -9,6 +9,8 @@ public class Rock : MonoBehaviour
     public GameObject Pipe3;
 
     [SerializeField] private GameObject Player;
+
+    [SerializeField] private GameObject Water;
     // Update is called once per frame
     void Update()
     {
@@ -17,6 +19,10 @@ public class Rock : MonoBehaviour
             if (Player.GetComponent<ResourceManager>())
             {
                 Player.GetComponent<ResourceManager>().IncreaseWater();
+                if (Water)
+                {
+                    Water.SetActive(true);
+                }
             }
             
             Destroy(this.gameObject);

@@ -10,6 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 4093677256858217085}
   - component: {fileID: 6663745212465195256}
+  - component: {fileID: 8624915413026760481}
+  - component: {fileID: -1984226708376156287}
+  - component: {fileID: -2634173096706538771}
   m_Layer: 0
   m_Name: TriplePipes
   m_TagString: Untagged
@@ -54,8 +57,77 @@ MonoBehaviour:
   RightPipe: 0
   Activated: 0
   CorrectPipe: {fileID: 0}
-  ActivateNextPipe: {fileID: 0}
+  ActivateNextPipe:
+  - {fileID: 0}
   Water: []
+  number: 0
+--- !u!114 &8624915413026760481
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1821504044837561903}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9cd31651ef623e46a8391dd89183cb7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outline: {fileID: -1984226708376156287}
+  m_OnInteract:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6663745212465195256}
+        m_TargetAssemblyTypeName: TurningPipe, Assembly-CSharp
+        m_MethodName: TurnPipe
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &-1984226708376156287
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1821504044837561903}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 0
+  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineWidth: 2
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
+--- !u!65 &-2634173096706538771
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1821504044837561903}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &350865961249342831
 PrefabInstance:
   m_ObjectHideFlags: 0

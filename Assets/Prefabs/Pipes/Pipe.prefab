@@ -12,8 +12,9 @@ GameObject:
   - component: {fileID: 8837096583673190575}
   - component: {fileID: 296727628939739769}
   - component: {fileID: 1767525254655440697}
-  - component: {fileID: 6906841943591201672}
   - component: {fileID: -2593693530265074101}
+  - component: {fileID: 2769623719982772160}
+  - component: {fileID: 7205089145325886747}
   m_Layer: 0
   m_Name: Pipe
   m_TagString: Untagged
@@ -106,34 +107,11 @@ MonoBehaviour:
   gm2: {fileID: 6703133608515705472}
   gm3: {fileID: 2411379099109811502}
   RightPipe: 0
+  Activated: 0
   CorrectPipe: {fileID: 0}
---- !u!114 &6906841943591201672
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3440958062538766655}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d9cd31651ef623e46a8391dd89183cb7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_OnInteract:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1767525254655440697}
-        m_TargetAssemblyTypeName: TurningPipe, Assembly-CSharp
-        m_MethodName: TurnPipe
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+  ActivateNextPipe: []
+  Water: []
+  number: 0
 --- !u!65 &-2593693530265074101
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -149,12 +127,58 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &2769623719982772160
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3440958062538766655}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9cd31651ef623e46a8391dd89183cb7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outline: {fileID: 7205089145325886747}
+  m_OnInteract:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1767525254655440697}
+        m_TargetAssemblyTypeName: TurningPipe, Assembly-CSharp
+        m_MethodName: TurnPipe
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &7205089145325886747
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3440958062538766655}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 0
+  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineWidth: 2
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1001 &2411379099109712782
 PrefabInstance:
   m_ObjectHideFlags: 0

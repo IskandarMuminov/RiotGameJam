@@ -26,6 +26,7 @@ public class TurningPipe : MonoBehaviour
     public int number;
 
     // Start is called before the first frame update
+    /*
     void Update()
     {
 
@@ -123,7 +124,7 @@ public class TurningPipe : MonoBehaviour
         }
         }
     }
-    /*
+    */
     public void TurnPipe()
     {
         if (Counter >= 2)
@@ -218,7 +219,7 @@ public class TurningPipe : MonoBehaviour
 
         
     }
-    */
+    
 
     private void ActiviatedPipe()
     {
