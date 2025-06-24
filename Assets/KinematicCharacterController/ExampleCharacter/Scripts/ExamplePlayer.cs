@@ -33,7 +33,8 @@ namespace KinematicCharacterController.Examples
         [SerializeField] private bool canGrapple = false;
         public GameObject grappleGO;
         public GameObject characterModel;
-        private float radius, heights, offset;
+        public GameObject CameraTarget;
+        private float radius, heights, offset, camtargetY;
         private Vector3 initialSizeModel;
 
         void OnEnable()
@@ -51,7 +52,7 @@ namespace KinematicCharacterController.Examples
             // Ignore the character's collider(s) for camera obstruction checks
             CharacterCamera.IgnoredColliders.Clear();
             CharacterCamera.IgnoredColliders.AddRange(Character.GetComponentsInChildren<Collider>());
-
+            
             ApplyState(CharacterStatus);
 
 
@@ -62,6 +63,7 @@ namespace KinematicCharacterController.Examples
             heights = CM.Capsule.height;
             offset = CM.GetYoff();
             initialSizeModel = characterModel.transform.localScale;
+            camtargetY = CameraTarget.transform.position.y;
         }
         public void ApplyState(Player_State status)
         {
@@ -70,6 +72,7 @@ namespace KinematicCharacterController.Examples
             {
                 case Player_State.Seedling:
                     canJump = false;
+                    multiplySize(seedlingSize);
                     break;
                 case Player_State.Sapling:
                     canJump = true;
@@ -92,6 +95,8 @@ namespace KinematicCharacterController.Examples
         {
             CM.SetCapsuleDimensions(radius * multiflier, heights * multiflier, offset * multiflier);
             characterModel.transform.localScale = initialSizeModel * multiflier;
+            CharacterCamera.MaxDistance = 10 + multiflier;
+            CameraTarget.transform.localPosition = new Vector3(0, multiflier, 0 );
         }
         
         void activeGrapple()
