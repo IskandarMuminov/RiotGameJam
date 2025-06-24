@@ -19,14 +19,12 @@ public class PlantingHole : MonoBehaviour
     public void setInHole(bool value)
     {
         inHole = value;
-        if (inHole)
-        {
-            CheckIfBuried();
-        }
+
     }
 
     private void CheckIfBuried()
     {
+        Debug.Log("Check if Buried"); 
         // If player is positioned in the hole
         if (inHole)
         {

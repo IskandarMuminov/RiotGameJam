@@ -31,18 +31,21 @@ public class Dirt : MonoBehaviour
 
     public void Move()
     {
-        Debug.Log("At Start: " + atStart);
-        dirt_moved?.Invoke(); 
+        //Debug.Log("At Start: " + atStart);
         if (atStart)
         {
             target = endPos;
             atStart = false;
+            // disable colliders
+            GetComponent<SphereCollider>().enabled = false;
         }
         else
         {
             target = startPos;
             atStart = true;
+
         }
+        dirt_moved?.Invoke();
     }
     
 }
