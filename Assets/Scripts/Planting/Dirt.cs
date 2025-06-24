@@ -15,7 +15,7 @@ public class Dirt : MonoBehaviour
 
     void Start()
     {
-        startPos = transform.position;
+        startPos = transform.localPosition;
         target = startPos; 
         //Debug.Log("Start"); 
         //Move();
@@ -25,7 +25,7 @@ public class Dirt : MonoBehaviour
     {
         if (transform.position != target)
         {
-            transform.position = Vector3.Lerp(transform.position, target, 0.1f); 
+            transform.localPosition = Vector3.Lerp(transform.localPosition, target, 0.1f); 
         }
     }
 
