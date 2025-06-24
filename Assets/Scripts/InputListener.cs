@@ -46,19 +46,19 @@ public class InputListener : MonoBehaviour
     
     IEnumerator WaterPopup()
     {
-        yield return new WaitForSecondsRealtime(10f);
+        yield return new WaitForSecondsRealtime(15f);
         DialogueManager.Instance.StartConversation("Water need", this.transform);
     }
     
     IEnumerator MineralPopup()
     {
-        yield return new WaitForSecondsRealtime(10f);
+        yield return new WaitForSecondsRealtime(15f);
         DialogueManager.Instance.StartConversation("Mineral Popup", this.transform);
     }
     
     IEnumerator PlantPopup()
     {
-        yield return new WaitForSecondsRealtime(10f);
+        yield return new WaitForSecondsRealtime(15f);
         DialogueManager.Instance.StartConversation("Planting", this.transform);
     }
     
