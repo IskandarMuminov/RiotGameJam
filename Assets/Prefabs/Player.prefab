@@ -1425,7 +1425,7 @@ MonoBehaviour:
   youngSize: 2
   matureSize: 2.5
   animator: {fileID: 5717431995003880414}
-  CharacterStatus: 2
+  CharacterStatus: 0
   canJump: 1
   canGrapple: 1
   grappleGO: {fileID: 2442970912039158500}
@@ -2526,6 +2526,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2826429115713200624}
     m_Modifications:
+    - target: {fileID: 43330285, guid: d295472d4ce25404e9aed2627c34801f, type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     - target: {fileID: 1339159333115884, guid: d295472d4ce25404e9aed2627c34801f, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -2577,6 +2581,10 @@ PrefabInstance:
     - target: {fileID: 4898694727102280, guid: d295472d4ce25404e9aed2627c34801f, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4898694727102280, guid: d295472d4ce25404e9aed2627c34801f, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114565867274256808, guid: d295472d4ce25404e9aed2627c34801f,
         type: 3}
@@ -2660,6 +2668,10 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 1458857513088384222}
     m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 43330285, guid: d295472d4ce25404e9aed2627c34801f,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 9151548221222600073}
     - targetCorrespondingSourceObject: {fileID: 1072008595159340, guid: d295472d4ce25404e9aed2627c34801f,
         type: 3}
       insertIndex: -1
@@ -2677,6 +2689,35 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 4470951563516164477}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &4470951563490136976 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 43330285, guid: d295472d4ce25404e9aed2627c34801f,
+    type: 3}
+  m_PrefabInstance: {fileID: 4470951563516164477}
+  m_PrefabAsset: {fileID: 0}
+--- !u!136 &9151548221222600073
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4470951563490136976}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 1
+  m_Height: 1.5
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.8, z: 0}
 --- !u!1 &4472017522548867153 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1072008595159340, guid: d295472d4ce25404e9aed2627c34801f,
@@ -3262,7 +3303,11 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 131851042225450579}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1210038090024910259, guid: 2af4aface4affa44a8ae9f735f47ae8c,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6862021971596290523}
   m_SourcePrefab: {fileID: 100100000, guid: 2af4aface4affa44a8ae9f735f47ae8c, type: 3}
 --- !u!1 &5717431994996600862 stripped
 GameObject:
@@ -3270,6 +3315,41 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 6886721949479325101}
   m_PrefabAsset: {fileID: 0}
+--- !u!70 &6862021971596290523
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5717431994996600862}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_Size: {x: 0.5, y: 1}
+  m_Direction: 0
 --- !u!4 &5717431994996894782 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1210038090025394579, guid: 2af4aface4affa44a8ae9f735f47ae8c,
