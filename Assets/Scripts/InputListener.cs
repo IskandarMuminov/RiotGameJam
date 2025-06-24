@@ -8,6 +8,7 @@ public class InputListener : MonoBehaviour
     UnityEvent m_sunLightPopup = new UnityEvent();
     private bool rounting = false;
     bool rt = false;
+    bool plant = false;
     void Start()
     {
         m_sunLightPopup.AddListener(OnJumpPressed);
@@ -23,7 +24,7 @@ public class InputListener : MonoBehaviour
         {
             m_sunLightPopup.Invoke();
         }
-        else if (currentSun == 3 && currentWater < 1)
+        else if (currentSun == 3 && currentWater < 1 && !plant)
         {
             if (m_sunLightPopup != null) m_sunLightPopup.RemoveListener(OnJumpPressed);
             //Register the next area's popup
@@ -48,14 +49,16 @@ public class InputListener : MonoBehaviour
     
     IEnumerator WaterPopup()
     {
-        yield return new WaitForSecondsRealtime(15f);
+        plant = true;
+        yield return new WaitForSecondsRealtime(10f);
         DialogueManager.Instance.StartConversation("Water need", this.transform);
+        plant = false;
     }
     
     IEnumerator MineralPopup()
     {
         rounting = true;
-        yield return new WaitForSecondsRealtime(15f);
+        yield return new WaitForSecondsRealtime(10f);
         DialogueManager.Instance.StartConversation("Mineral Popup", this.transform);
         rounting = false;
     }
@@ -63,7 +66,7 @@ public class InputListener : MonoBehaviour
     IEnumerator PlantPopup()
     {
         rt = true;
-        yield return new WaitForSecondsRealtime(15f);
+        yield return new WaitForSecondsRealtime(10f);
         DialogueManager.Instance.StartConversation("Planting", this.transform);
         rt = false;
     }
