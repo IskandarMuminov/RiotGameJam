@@ -10,6 +10,7 @@ public class TurningPipe : MonoBehaviour
     public GameObject gm1;
     public GameObject gm2;
     public GameObject gm3;
+    
 
     private GameObject currentGameObject ;
 
@@ -17,7 +18,7 @@ public class TurningPipe : MonoBehaviour
     public bool Activated;
     public GameObject CorrectPipe;
 
-    public GameObject ActivateNextPipe;
+    public GameObject[] ActivateNextPipe;
 
     public GameObject[] Water;
 
@@ -41,14 +42,22 @@ public class TurningPipe : MonoBehaviour
                 if (gm1 == CorrectPipe)
                 {
                     RightPipe = true;
-                    ActivateNextPipe.GetComponent<TurningPipe>().Activated = true; 
-                    ActivateNextPipe.GetComponent<TurningPipe>().ActiviatedPipe();
+                    foreach (GameObject NextPipe in ActivateNextPipe)
+                    {
+                        NextPipe.GetComponent<TurningPipe>().Activated = true; 
+                        NextPipe.GetComponent<TurningPipe>().ActiviatedPipe();
+                    }
+                    
 
                 }
                 else
                 {
                     RightPipe = false;
-                    ActivateNextPipe.GetComponent<TurningPipe>().Activated = false; 
+                    foreach (GameObject NextPipe in ActivateNextPipe)
+                    {
+                        NextPipe.GetComponent<TurningPipe>().Activated = false;
+                    }
+                    
                 }
             }
                 
@@ -62,13 +71,21 @@ public class TurningPipe : MonoBehaviour
                 if (gm2 == CorrectPipe)
                 {
                     RightPipe = true;
-                    ActivateNextPipe.GetComponent<TurningPipe>().Activated = true; 
-                    ActivateNextPipe.GetComponent<TurningPipe>().ActiviatedPipe();
+                    foreach (GameObject NextPipe in ActivateNextPipe)
+                    {
+                        NextPipe.GetComponent<TurningPipe>().Activated = true; 
+                        NextPipe.GetComponent<TurningPipe>().ActiviatedPipe();
+                    }
+                  
                 }
                 else
                 {
                     RightPipe = false;
-                    ActivateNextPipe.GetComponent<TurningPipe>().Activated = false; 
+                    foreach (GameObject NextPipe in ActivateNextPipe)
+                    {
+                        NextPipe.GetComponent<TurningPipe>().Activated = false;     
+                    }
+                    
                 }
             }
         }
@@ -81,13 +98,19 @@ public class TurningPipe : MonoBehaviour
                 if (gm3 == CorrectPipe)
                 {
                     RightPipe = true;
-                    ActivateNextPipe.GetComponent<TurningPipe>().Activated = true; 
-                    ActivateNextPipe.GetComponent<TurningPipe>().ActiviatedPipe();
+                    foreach (GameObject NextPipe in ActivateNextPipe)
+                    {
+                        NextPipe.GetComponent<TurningPipe>().Activated = true;
+                        NextPipe.GetComponent<TurningPipe>().ActiviatedPipe();
+                    }
                 }
                 else
                 {
                     RightPipe = false;
-                    ActivateNextPipe.GetComponent<TurningPipe>().Activated = false; 
+                    foreach (GameObject NextPipe in ActivateNextPipe)
+                    {
+                        NextPipe.GetComponent<TurningPipe>().Activated = false;
+                    }
                 }
             }
         }
