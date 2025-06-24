@@ -586,7 +586,6 @@ GameObject:
   - component: {fileID: 2826429115713200624}
   - component: {fileID: 4858117403270695083}
   - component: {fileID: 5386504530648345394}
-  - component: {fileID: 3911971506337938761}
   - component: {fileID: 7281364091112845908}
   - component: {fileID: 3581726007430264240}
   m_Layer: 0
@@ -631,11 +630,11 @@ MonoBehaviour:
   CharacterCamera: {fileID: 8240035058529682037}
   CM: {fileID: 4581410600763508053}
   seedlingSize: 1
-  saplingSize: 3
-  youngSize: 5
-  matureSize: 10
+  saplingSize: 1.5
+  youngSize: 2
+  matureSize: 2.5
   animator: {fileID: 5717431995003880414}
-  CharacterStatus: 2
+  CharacterStatus: 0
   canJump: 1
   canGrapple: 1
   grappleGO: {fileID: 2442970912039158500}
@@ -654,18 +653,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player_State: 0
---- !u!114 &3911971506337938761
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8182549924998452291}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 966beae1b00b30f41a0c8bafcebc0308, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &7281364091112845908
 MonoBehaviour:
   m_ObjectHideFlags: 0
