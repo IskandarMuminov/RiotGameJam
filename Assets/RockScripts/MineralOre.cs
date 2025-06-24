@@ -1,22 +1,26 @@
+using System;
+using Microlight.MicroBar;
 using UnityEngine;
+using UnityEngine.Events;
 using Random = UnityEngine.Random;
 
 public class MineralOre : MonoBehaviour
 {
     [SerializeField] private GameObject mineralOre;
     [SerializeField] float spawnRadius = 5f;
+    [SerializeField] private GameObject healthBar;
+    [SerializeField] private GameObject QteBar;
+    
     private int mineralToSpawn;
 
-    private void Start()
+    void OnInteractPressed()
     {
-        mineralToSpawn = Random.Range(2, 5);
+        throw new NotImplementedException();
     }
+
     private void OnDestroy()
     {
-        for (int i = 0; i < mineralToSpawn; i++)
-        {
-            SpawnObject();
-        }
+        SpawnObject();
     }
 
     void SpawnObject()
@@ -25,5 +29,23 @@ public class MineralOre : MonoBehaviour
         randomDirection.y = 0;
         Vector3 spawnPosition = transform.position + randomDirection;
         Instantiate(mineralOre, spawnPosition, Quaternion.identity);
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            healthBar.SetActive(true);
+            //QteBar.SetActive(true);
+        }
+
+    }
+
+    private void OnTriggerStay(Collider other)
+    {
+        if (other.CompareTag("Player") && Input.GetKeyDown(KeyCode.E))
+        {
+            QteBar.SetActive(true);
+        }
     }
 }

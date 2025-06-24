@@ -21,7 +21,7 @@ public class Qte : MonoBehaviour
     {
         pointerTransform = GetComponent<RectTransform>();
         targetPosition = pointB.position;
-        moveSpeed = Random.Range(3, 7);
+        moveSpeed = Random.Range(4, 8);
     }
  
     void Update()
@@ -42,7 +42,7 @@ public class Qte : MonoBehaviour
         }
  
         // Check for input
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetMouseButton(0))
         {
             CheckSuccess();
         }
