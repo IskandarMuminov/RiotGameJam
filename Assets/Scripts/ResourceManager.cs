@@ -43,7 +43,7 @@ public class ResourceManager : MonoBehaviour
     public static ResourceManager Instance;
     // Track amount of sunlight, water and minerals collected 
     private Stats sun_stats = new(3);
-    private Stats water_stats = new(3);
+    private Stats water_stats = new(1);
     private Stats mineral_stats = new(3);
     // Trigger events to update UI, Abilities and Player Mesh
     public static UnityAction<string, int> StatUpdated;
