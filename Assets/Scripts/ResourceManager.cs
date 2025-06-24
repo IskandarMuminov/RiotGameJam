@@ -55,8 +55,12 @@ public class ResourceManager : MonoBehaviour
     void Start()
     {
         Instance = this;
-        // IncreaseSun();
-        // IncreaseWater();
+        IncreaseSun();
+        IncreaseSun();
+        IncreaseSun();
+        IncreaseWater();
+        IncreaseWater();
+        IncreaseWater();
         // IncreaseMineral();
     }
 
@@ -68,12 +72,12 @@ public class ResourceManager : MonoBehaviour
 
     public void IncreaseWater()
     {
-        IncreaseStats(water_stats, "Water", Player_State.Young); 
+        water_stats = IncreaseStats(water_stats, "Water", Player_State.Young); 
     }
 
     public void IncreaseMineral()
     {
-        IncreaseStats(mineral_stats, "Mineral", Player_State.Mature); 
+        mineral_stats = IncreaseStats(mineral_stats, "Mineral", Player_State.Mature); 
     }
 
     public int GetCurrentSun()
