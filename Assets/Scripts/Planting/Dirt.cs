@@ -12,11 +12,13 @@ public class Dirt : MonoBehaviour
     private Vector3 target;
 
     public static UnityAction dirt_moved;
+    public GameObject player;
 
     void Start()
     {
         startPos = transform.localPosition;
-        target = startPos; 
+        target = startPos;
+        player = GameObject.FindGameObjectWithTag("Player"); 
         //Debug.Log("Start"); 
         //Move();
     }
@@ -31,21 +33,26 @@ public class Dirt : MonoBehaviour
 
     public void Move()
     {
-        //Debug.Log("At Start: " + atStart);
-        if (atStart)
-        {
-            target = endPos;
-            atStart = false;
-            // disable colliders
-            GetComponent<SphereCollider>().enabled = false;
-        }
-        else
-        {
-            target = startPos;
-            atStart = true;
+        Debug.Log(player.GetComponentInParent<ResourceManager>().player_State);
 
+        if (player.GetComponentInParent<ResourceManager>().player_State == Player_State.Mature)
+        {
+            if (atStart)
+            {
+                target = endPos;
+                atStart = false;
+                // disable colliders
+                GetComponent<SphereCollider>().enabled = false;
+            }
+            else
+            {
+                target = startPos;
+                atStart = true;
+
+            }
+            dirt_moved?.Invoke();
         }
-        dirt_moved?.Invoke();
+
     }
     
 }

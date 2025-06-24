@@ -9,7 +9,8 @@ public class PlantingHole : MonoBehaviour
     [SerializeField] private Dirt[] dirtObjects;
     [SerializeField] private bool inHole = false;
     [SerializeField] private bool isPlanted = false;
-    public static UnityAction plantingCompleted; 
+    public static UnityAction plantingCompleted;
+    private Player_State state;
 
     private void OnEnable()
     {
@@ -19,12 +20,17 @@ public class PlantingHole : MonoBehaviour
     public void setInHole(bool value)
     {
         inHole = value;
+    }
 
+    public void SetState(Player_State s)
+    {
+        Debug.Log("State: " + s);
+        state = s;
     }
 
     private void CheckIfBuried()
     {
-        Debug.Log("Check if Buried"); 
+        Debug.Log("Check if Buried");
         // If player is positioned in the hole
         if (inHole)
         {
@@ -39,10 +45,15 @@ public class PlantingHole : MonoBehaviour
             }
             // if all true, plant is planted 
             isPlanted = true;
-            Time.timeScale = 0; 
             plantingCompleted?.Invoke();
-
+            StartCoroutine(DelayPause()); 
         }
+    }
+
+    private IEnumerator DelayPause()
+    {
+        yield return new WaitForSeconds(2);
+        Time.timeScale = 0;
     }
 
 }
