@@ -11,8 +11,9 @@ public class PlantingHole_Floor : MonoBehaviour
         if (other.gameObject.tag == "Player")
         {
             Debug.Log("Collide with Player");
-
-            GetComponentInParent<PlantingHole>().setInHole(true);
+            PlantingHole hole = GetComponentInParent<PlantingHole>();
+            hole.setInHole(true);
+            hole.SetState(other.gameObject.GetComponentInParent<ResourceManager>().player_State);
         }
     }
 
