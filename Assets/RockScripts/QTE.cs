@@ -1,7 +1,9 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using Random = UnityEngine.Random;
 
 public class Qte : MonoBehaviour
 {
@@ -11,7 +13,7 @@ public class Qte : MonoBehaviour
     private float moveSpeed; // Speed of the pointer movement
     public UnityEvent onSuccess;
     public UnityEvent onFailure;
-    
+    public UnityEvent onDestroyEvent;
     private float direction = 1f; // 1 for moving towards B, -1 for moving towards A
     private RectTransform pointerTransform;
     private Vector3 targetPosition;
@@ -62,5 +64,10 @@ public class Qte : MonoBehaviour
             //dangerZone.TakeDamage();
             Debug.Log("Fail!");
         }
+    }
+
+    private void OnDestroy()
+    {
+        onDestroyEvent.Invoke();
     }
 }

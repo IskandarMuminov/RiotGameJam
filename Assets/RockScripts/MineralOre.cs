@@ -13,17 +13,7 @@ public class MineralOre : MonoBehaviour
     
     private int mineralToSpawn;
 
-    void OnInteractPressed()
-    {
-        throw new NotImplementedException();
-    }
-
-    private void OnDestroy()
-    {
-        SpawnObject();
-    }
-
-    void SpawnObject()
+    public void SpawnObject()
     {
         Vector3 randomDirection = Random.insideUnitSphere * spawnRadius;
         randomDirection.y = 0;
