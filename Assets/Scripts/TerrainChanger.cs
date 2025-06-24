@@ -10,6 +10,10 @@ public class TerrainChanger : MonoBehaviour
     public GameObject[] matureTerrains;
     public static TerrainChanger instance;
     // Start is called before the first frame update
+    private void Start()
+    {
+        instance = this;
+    }
     public void changeTerrain(Player_State state)
     {
         switch (state)
