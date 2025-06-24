@@ -3,13 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using KinematicCharacterController;
 using KinematicCharacterController.Examples;
-    // public enum status
-    // {
-    //     Small,
-    //     Medium,
-    //     Large,
-    //     ExtraLarge
-    // }
+using MoreMountains.Feedbacks;
+// public enum status
+// {
+//     Small,
+//     Medium,
+//     Large,
+//     ExtraLarge
+// }
 namespace KinematicCharacterController.Examples
 {
 
@@ -36,6 +37,8 @@ namespace KinematicCharacterController.Examples
         public GameObject CameraTarget;
         private float radius, heights, offset, camtargetY;
         private Vector3 initialSizeModel;
+        //public GameObject FeelJump, FeelGrow;
+        public MMF_Player jumpFeedback, growFeedBack;
 
         void OnEnable()
         {
@@ -96,7 +99,8 @@ namespace KinematicCharacterController.Examples
             CM.SetCapsuleDimensions(radius * multiflier, heights * multiflier, offset * multiflier);
             characterModel.transform.localScale = initialSizeModel * multiflier;
             CharacterCamera.MaxDistance = 10 + multiflier;
-            CameraTarget.transform.localPosition = new Vector3(0, multiflier, 0 );
+            CameraTarget.transform.localPosition = new Vector3(0, multiflier, 0);
+            growFeedBack.PlayFeedbacks();
         }
         
         void activeGrapple()
@@ -126,6 +130,7 @@ namespace KinematicCharacterController.Examples
             if (canJump && Input.GetKeyDown(KeyCode.Space))
             {
                 animator.SetTrigger("Jump");
+                jumpFeedback.PlayFeedbacks();
             }
             HandleCharacterInput();
         }
