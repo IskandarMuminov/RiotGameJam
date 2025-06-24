@@ -78,19 +78,28 @@ public class ResourceManager : MonoBehaviour
         return sun_stats.current_amount;
     }
     
+    public int GetCurrentWater()
+    {
+        return water_stats.current_amount;
+    }
+    
+    public int GetCurrentMineral()
+    {
+        return mineral_stats.current_amount;
+    }
+    
     private Stats IncreaseStats(Stats stats, string type, Player_State next_state)
     {
         stats.Inc();
-        // trigger event for UI update
-        TerrainChanger.instance.changeTerrain(next_state);
         StatUpdated?.Invoke(type, stats.current_amount);
         if (stats.IsReqReached())
         {
-            
             // move to sapling stage
             if (player_State != next_state) {
                 player_State = next_state;
                 StateChanged?.Invoke(player_State);
+                // trigger event for UI update
+                    TerrainChanger.Instance.changeTerrain(next_state);
             }
         }
         return stats; 
