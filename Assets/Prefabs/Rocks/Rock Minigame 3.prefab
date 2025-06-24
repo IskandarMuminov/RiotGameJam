@@ -649,6 +649,8 @@ GameObject:
   - component: {fileID: 7224057724413377881}
   - component: {fileID: 7145390671340200565}
   - component: {fileID: 5054162300676942333}
+  - component: {fileID: 7127537529306472409}
+  - component: {fileID: 2916936096169219772}
   m_Layer: 0
   m_Name: Rock Minigame 3
   m_TagString: Untagged
@@ -687,7 +689,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ad20e98738aca448868c55175103de9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _health: 3
+  _health: 100
   _damage: 1
   healthBar: {fileID: 6024901345316801851}
 --- !u!114 &7224057724413377881
@@ -735,6 +737,47 @@ MonoBehaviour:
   mineralOre: {fileID: 5140585274535285417, guid: e6938ec65c792de45b96be43f4561e3d,
     type: 3}
   spawnRadius: 3
+  healthBar: {fileID: 6592799756656179386}
+  QteBar: {fileID: 3779754743882379535}
+--- !u!135 &7127537529306472409
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3464493538343403735}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 4.59
+  m_Center: {x: -2.63, y: -0.1, z: -1.41}
+--- !u!114 &2916936096169219772
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3464493538343403735}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 0
+  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineWidth: 2
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1 &3779754743882379535
 GameObject:
   m_ObjectHideFlags: 0
@@ -750,7 +793,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1546490476130829943
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1235,7 +1278,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &296763292819958065
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1405,7 +1448,7 @@ MonoBehaviour:
     _dualGhostBars: 0
     _ghostBarDamageColor: {r: 1, g: 0.759434, b: 0.759434, a: 1}
     _ghostBarHealColor: {r: 0.6404338, g: 1, b: 0.3537736, a: 1}
-    _damageAnim: 3
+    _damageAnim: 2
     _damageAnimDuration: 0.5
     _damageAnimDelay: 0.1
     _damageFlashColor: {r: 1, g: 1, b: 1, a: 1}
@@ -1568,7 +1611,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -132.30011, y: 0.00012207031}
+  m_AnchoredPosition: {x: -115.5, y: 0}
   m_SizeDelta: {x: 30.8, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &9048785116530455325
@@ -1603,7 +1646,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 136.84999, y: -0.060055733}
+  m_AnchoredPosition: {x: 127.7, y: -0.1}
   m_SizeDelta: {x: 22.29, y: 30.13}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1001 &1616272602950071051
