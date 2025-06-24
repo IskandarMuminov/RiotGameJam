@@ -1,22 +1,28 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class PlantingHole : MonoBehaviour
 {
 
     [SerializeField] private Dirt[] dirtObjects;
     [SerializeField] private bool inHole = false;
-    [SerializeField] private bool isPlanted = false; 
+    [SerializeField] private bool isPlanted = false;
+    public static UnityAction plantingCompleted; 
 
     private void OnEnable()
     {
-        Dirt.dirt_moved += CheckIfBuried; 
+        Dirt.dirt_moved += CheckIfBuried;
     }
 
     public void setInHole(bool value)
     {
-        inHole = value; 
+        inHole = value;
+        if (inHole)
+        {
+            CheckIfBuried();
+        }
     }
 
     private void CheckIfBuried()
@@ -35,6 +41,8 @@ public class PlantingHole : MonoBehaviour
             }
             // if all true, plant is planted 
             isPlanted = true;
+            plantingCompleted?.Invoke();
+
         }
     }
 

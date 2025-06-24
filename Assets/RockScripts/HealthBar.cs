@@ -4,7 +4,7 @@ using UnityEngine;
 public class HealthBar : MonoBehaviour
 {
     [SerializeField] private float _health;
-    [SerializeField] private float _damage;
+    [SerializeField] private float _damage = 0;
     [SerializeField] private MicroBar healthBar;
     //[SerializeField] private MineralOre damageBar;
 

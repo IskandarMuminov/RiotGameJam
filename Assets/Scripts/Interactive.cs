@@ -19,7 +19,7 @@ public class Interactive : MonoBehaviour
         private InteractEvent m_OnInteract = new InteractEvent();
 
     // This function will run whatever function is set in the editor
-    void Interact()
+    public void Interact()
     {
         m_OnInteract.Invoke(); 
         
