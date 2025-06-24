@@ -55,13 +55,6 @@ public class ResourceManager : MonoBehaviour
     void Start()
     {
         Instance = this;
-        IncreaseSun();
-        IncreaseSun();
-        IncreaseSun();
-        IncreaseWater();
-        IncreaseWater();
-        IncreaseWater();
-        // IncreaseMineral();
     }
 
     public void IncreaseSun()
