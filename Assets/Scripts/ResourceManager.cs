@@ -82,6 +82,7 @@ public class ResourceManager : MonoBehaviour
     {
         stats.Inc();
         // trigger event for UI update
+        TerrainChanger.instance.changeTerrain(next_state);
         StatUpdated?.Invoke(type, stats.current_amount);
         if (stats.IsReqReached())
         {
