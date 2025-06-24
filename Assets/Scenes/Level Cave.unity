@@ -942,31 +942,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 11426072, guid: 01ff7788ab0873944825e6b351686446, type: 3}
-      propertyPath: initialDatabase
-      value: 
-      objectReference: {fileID: 11400000, guid: 40afaca38ae05b14bb24b616bb71a4f7,
-        type: 2}
-    - target: {fileID: 11426072, guid: 01ff7788ab0873944825e6b351686446, type: 3}
-      propertyPath: displaySettings.dialogueUI
-      value: 
-      objectReference: {fileID: 101180, guid: 5ba51781a19f8a843abeb2d304d0d26e, type: 3}
-    - target: {fileID: 11426072, guid: 01ff7788ab0873944825e6b351686446, type: 3}
-      propertyPath: displaySettings.inputSettings.alwaysForceResponseMenu
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 11426072, guid: 01ff7788ab0873944825e6b351686446, type: 3}
-      propertyPath: displaySettings.subtitleSettings.showPCSubtitlesDuringLine
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 11471062, guid: 01ff7788ab0873944825e6b351686446, type: 3}
-      propertyPath: m_prefabs.Array.size
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 11471062, guid: 01ff7788ab0873944825e6b351686446, type: 3}
-      propertyPath: m_prefabs.Array.data[3]
-      value: 
-      objectReference: {fileID: 195152, guid: 21b4828b943afef4896267f31f98ee1a, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

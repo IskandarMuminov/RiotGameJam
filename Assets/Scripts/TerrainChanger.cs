@@ -8,11 +8,11 @@ public class TerrainChanger : MonoBehaviour
     public GameObject[] sapTerrains;
     public GameObject[] youngTerrains;
     public GameObject[] matureTerrains;
-    public static TerrainChanger instance;
+    public static TerrainChanger Instance;
     // Start is called before the first frame update
     private void Start()
     {
-        instance = this;
+        Instance = this;
     }
     public void changeTerrain(Player_State state)
     {
