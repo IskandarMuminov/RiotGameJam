@@ -27,6 +27,14 @@ public class InputListener : MonoBehaviour
             //Register the next area's popup
             StartCoroutine(WaterPopup());
         }
+        else if (currentSun == 3 && currentWater == 1 && currentMineral < 3)
+        {
+            StartCoroutine(MineralPopup());
+        }
+        else if (currentSun == 3 && currentWater == 1 && currentMineral == 3)
+        {
+            StartCoroutine(PlantPopup());
+        }
     }
 
     void OnJumpPressed()
@@ -44,14 +52,14 @@ public class InputListener : MonoBehaviour
     
     IEnumerator MineralPopup()
     {
-        yield return new WaitForSecondsRealtime(20f);
-        //DialogueManager.Instance.StartConversation("Water need", this.transform);
+        yield return new WaitForSecondsRealtime(10f);
+        DialogueManager.Instance.StartConversation("Mineral Popup", this.transform);
     }
     
     IEnumerator PlantPopup()
     {
-        yield return new WaitForSecondsRealtime(20f);
-        //DialogueManager.Instance.StartConversation("Water need", this.transform);
+        yield return new WaitForSecondsRealtime(10f);
+        DialogueManager.Instance.StartConversation("Planting", this.transform);
     }
     
 }
