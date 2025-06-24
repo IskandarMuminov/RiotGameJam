@@ -1424,7 +1424,7 @@ MonoBehaviour:
   youngSize: 2
   matureSize: 2.5
   animator: {fileID: 5717431995003880414}
-  CharacterStatus: 0
+  CharacterStatus: 2
   canJump: 1
   canGrapple: 1
   grappleGO: {fileID: 2442970912039158500}
@@ -1432,6 +1432,8 @@ MonoBehaviour:
   CameraTarget: {fileID: 4470548460872123133}
   jumpFeedback: {fileID: 5674442625048034632}
   growFeedBack: {fileID: 5896267857745434049}
+  runFeedback: {fileID: 3343422315242193956}
+  Motor: {fileID: 4581410600763508053}
 --- !u!114 &5386504530648345394
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -38,7 +38,9 @@ namespace KinematicCharacterController.Examples
         private float radius, heights, offset, camtargetY;
         private Vector3 initialSizeModel;
         //public GameObject FeelJump, FeelGrow;
-        public MMF_Player jumpFeedback, growFeedBack;
+        public MMF_Player jumpFeedback, growFeedBack,runFeedback;
+        private bool runFeedbackIsPlaying = false;
+        public KinematicCharacterMotor Motor;
 
         void OnEnable()
         {
@@ -132,6 +134,17 @@ namespace KinematicCharacterController.Examples
                 animator.SetTrigger("Jump");
                 jumpFeedback.PlayFeedbacks();
             }
+            if (Motor.GroundingStatus.IsStableOnGround && !runFeedbackIsPlaying)
+            {
+                runFeedback.PlayFeedbacks();
+                runFeedbackIsPlaying = true;
+            }
+            else if (!Motor.GroundingStatus.IsStableOnGround)
+            {
+                runFeedback.StopFeedbacks();
+                runFeedbackIsPlaying = false;
+            }
+            
             HandleCharacterInput();
         }
 
