@@ -359,6 +359,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 22200633}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &29577122 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4470548460872123133, guid: d64f63d457bb32348983af6ffcf6a1c4,
+    type: 3}
+  m_PrefabInstance: {fileID: 993111613}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &56906858
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3986,7 +3992,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &705846727
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5354,6 +5360,21 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1458857513088384222, guid: d64f63d457bb32348983af6ffcf6a1c4,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.29
+      objectReference: {fileID: 0}
+    - target: {fileID: 1458857513088384222, guid: d64f63d457bb32348983af6ffcf6a1c4,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2.72
+      objectReference: {fileID: 0}
+    - target: {fileID: 1458857513088384222, guid: d64f63d457bb32348983af6ffcf6a1c4,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2073767910557286463, guid: d64f63d457bb32348983af6ffcf6a1c4,
         type: 3}
       propertyPath: debugAssist
@@ -5418,6 +5439,21 @@ PrefabInstance:
         type: 3}
       propertyPath: canGrapple
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4858117403270695083, guid: d64f63d457bb32348983af6ffcf6a1c4,
+        type: 3}
+      propertyPath: CameraTarget
+      value: 
+      objectReference: {fileID: 29577122}
+    - target: {fileID: 4858117403270695083, guid: d64f63d457bb32348983af6ffcf6a1c4,
+        type: 3}
+      propertyPath: CharacterStatus
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5386504530648345394, guid: d64f63d457bb32348983af6ffcf6a1c4,
+        type: 3}
+      propertyPath: player_State
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8182549924998452291, guid: d64f63d457bb32348983af6ffcf6a1c4,
         type: 3}
@@ -7913,7 +7949,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1515550178
 MonoBehaviour:
   m_ObjectHideFlags: 0
