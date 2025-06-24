@@ -6,7 +6,8 @@ public class TerrainChanger : MonoBehaviour
 {
     public GameObject[] seedTerrains;
     public GameObject[] sapTerrains;
-    public GameObject[] treeTerrains;
+    public GameObject[] youngTerrains;
+    public GameObject[] matureTerrains;
     public static TerrainChanger instance;
     // Start is called before the first frame update
     public void changeTerrain(Player_State state)
@@ -23,7 +24,13 @@ public class TerrainChanger : MonoBehaviour
                 }
                 break;
             case Player_State.Young:
-                foreach (GameObject terrain in treeTerrains)
+                foreach (GameObject terrain in youngTerrains)
+                {
+                    terrain.SetActive(true);
+                }
+                break;
+            case Player_State.Mature:
+                foreach (GameObject terrain in matureTerrains)
                 {
                     terrain.SetActive(true);
                 }
