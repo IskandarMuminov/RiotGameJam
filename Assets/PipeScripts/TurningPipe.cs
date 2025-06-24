@@ -141,7 +141,8 @@ public class TurningPipe : MonoBehaviour
             gm1.SetActive(true);
             if (CorrectPipe)
             {
-                if (gm1 == CorrectPipe)
+                
+                if (gm1 == CorrectPipe && this.gameObject.GetComponent<TurningPipe>().Activated == true)
                 {
                     RightPipe = true;
                     foreach (GameObject NextPipe in ActivateNextPipe)
@@ -170,7 +171,7 @@ public class TurningPipe : MonoBehaviour
             gm2.SetActive(true);
             if (CorrectPipe)
             {
-                if (gm2 == CorrectPipe)
+                if (gm2 == CorrectPipe && this.gameObject.GetComponent<TurningPipe>().Activated == true)
                 {
                     RightPipe = true;
                     foreach (GameObject NextPipe in ActivateNextPipe)
@@ -197,7 +198,7 @@ public class TurningPipe : MonoBehaviour
             gm3.SetActive(true);
             if (CorrectPipe)
             {
-                if (gm3 == CorrectPipe)
+                if (gm3 == CorrectPipe && this.gameObject.GetComponent<TurningPipe>().Activated == true)
                 {
                     RightPipe = true;
                     foreach (GameObject NextPipe in ActivateNextPipe)

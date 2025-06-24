@@ -13072,16 +13072,51 @@ PrefabInstance:
       propertyPath: Player
       value: 
       objectReference: {fileID: 1059753615}
+    - target: {fileID: 3838949075931179404, guid: 42a77d6215bbe8f43af4086d0c2cde14,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4252448520466381904, guid: 42a77d6215bbe8f43af4086d0c2cde14,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4451192771634517950, guid: 42a77d6215bbe8f43af4086d0c2cde14,
         type: 3}
       propertyPath: m_Name
       value: WaterPipeMiniGame
+      objectReference: {fileID: 0}
+    - target: {fileID: 4641599331077884176, guid: 42a77d6215bbe8f43af4086d0c2cde14,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4976763304790840514, guid: 42a77d6215bbe8f43af4086d0c2cde14,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4976763304793033218, guid: 42a77d6215bbe8f43af4086d0c2cde14,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 4a7ed7c1c66a53247b8cee72af84b173, type: 2}
+    - target: {fileID: 5765873982217269098, guid: 42a77d6215bbe8f43af4086d0c2cde14,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6087345510615820348, guid: 42a77d6215bbe8f43af4086d0c2cde14,
+        type: 3}
+      propertyPath: Activated
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6087345510615820348, guid: 42a77d6215bbe8f43af4086d0c2cde14,
+        type: 3}
+      propertyPath: RightPipe
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6925603911679397761, guid: 42a77d6215bbe8f43af4086d0c2cde14,
         type: 3}
       propertyPath: m_LocalScale.x
